@@ -1,0 +1,9 @@
+<p>Who would you like to see fight?</p>
+
+<%= form_tag(matches_path, method: :get) do %>
+  <p>Enter a search term below</p>
+  <%= text_field_tag :wrestler1 %> vs <%= text_field_tag :wrestler2 %>
+  <%= submit_tag "go" %>
+<% end %>
+
+<%= "You said #{params['wrestler1']} vs #{params['wrestler2']}" if params['wrestler1'] %>
